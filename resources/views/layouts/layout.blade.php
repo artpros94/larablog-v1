@@ -16,16 +16,24 @@
             @include('elem.header')
         </div>
             
-  
-
         <div class="content">
+
+            @if(Route::is('home'))
+            <div class="px-4 pt-1 my-1 text-center border-bottom">
+                <h1 class="display-4 fw-bold">Centered screenshot</h1>
+                <div class="col-lg-6 mx-auto">
+                <p class="lead mb-4">Quickly design and customize responsive mobile-first sites with Bootstrap, the world’s most popular front-end open source toolkit, featuring Sass variables and mixins, responsive grid system, extensive prebuilt components, and powerful JavaScript plugins.</p>
+                </div>
+            </div>
+            @endif  
+
             <div class="container">
                 <div class="row">
                     <div class="col-10">
                         @yield('content')
                     </div>
                     <div class="col-2">
-                        @include('elem.aside')
+                        @include('elem.aside', ['categories' => $categories])
                     </div>
                 </div>
             </div>
